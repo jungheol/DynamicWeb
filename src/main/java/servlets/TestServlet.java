@@ -22,7 +22,7 @@ public class TestServlet extends HttpServlet {
 
         req.setAttribute("tableData", tableData);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("test.jsp");
         dispatcher.forward(req, res);
     }
 

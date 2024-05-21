@@ -27,7 +27,6 @@
 </head>
 <body>
     <h2>Table Example</h2>
-    <form action="" method="get">
     <table>
         <thead>
             <tr>
@@ -46,6 +45,5 @@
             </c:forEach>
         </tbody>
     </table>
-    </form>
 </body>
 </html>
