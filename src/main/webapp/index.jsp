@@ -5,13 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<form action="CalcServlet" method="post">
-    <!--    action = "CalcServlet"도 가능 제일 앞에 /가 중요하진 않은 듯-->
-    <!--<form action = "cals.jsp" method="post">    -->
-    숫자1 : <input type="text" name="num1"><br>
-    숫자2 : <input type="text" name="num2"><br>
-    이름  : <input type="text" name="userName"><br>
-    <input type="submit" value="계산">
-</form>
+<a href="Hello.test" methods="get">Servlet으로 넘어갑니다.</a>
 </body>
 </html>
