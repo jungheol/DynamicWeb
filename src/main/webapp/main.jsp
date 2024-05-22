@@ -10,9 +10,6 @@
         body {
             font-family: Arial, sans-serif;
         }
-        h1 {
-            color: #4CAF50;
-        }
         .container {
             width: 80%;
             margin: auto;
@@ -52,13 +49,11 @@
 <body>
     <div class="container">
         <h1>와이파이 정보 구하기</h1>
-        <form action="/load-wifi" method="get">
         <p>
-        <a href="#">홈</a> |
-        <a href="#">와이파이 히스토리 목록</a> |
+        <a href="/">홈</a> |
+        <a href="/history">와이파이 히스토리 목록</a> |
         <a href="/load-wifi">Open API 와이파이 정보 가져오기</a>
         </p>
-        </form>
         <div class="search-bar">
             <label for="lat">LAT:</label>
             <input type="text" id="lat" name="lat" value="0.0">
