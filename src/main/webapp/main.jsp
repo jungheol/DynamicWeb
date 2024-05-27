@@ -59,9 +59,24 @@
             <input type="text" id="lat" name="lat" value="0.0">
             <label for="lnt">LNT:</label>
             <input type="text" id="lnt" name="lnt" value="0.0">
-            <button>내 위치 가져오기</button>
+            <button id="get-location">내 위치 가져오기</button>
             <button>근처 WIFI 정보 보기</button>
         </div>
+
+        <script>
+            document.getElementById('get-location').addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        document.getElementById('lat').value = position.coords.latitude;
+                        document.getElementById('lnt').value = position.coords.longitude;
+                    }, function(error) {
+                        console.error("Error Code = " + error.code + " - " + error.message);
+                    });
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            });
+        </script>
 
         <table>
             <thead>
