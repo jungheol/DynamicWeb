@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>와이파이 정보 구하기</title>
     <style>
@@ -67,7 +74,26 @@
             </form>
         </div>
 
-        <table>
+        <table class="table" style="undefinedtable-layout: fixed; width: 1833px">
+            <colgroup>
+                <col style="width: 86px">
+                <col style="width: 77px">
+                <col style="width: 74px">
+                <col style="width: 147px">
+                <col style="width: 197px">
+                <col style="width: 127px">
+                <col style="width: 83px">
+                <col style="width: 134px">
+                <col style="width: 99px">
+                <col style="width: 144px">
+                <col style="width: 104px">
+                <col style="width: 59px">
+                <col style="width: 73px">
+                <col style="width: 116px">
+                <col style="width: 97px">
+                <col style="width: 103px">
+                <col style="width: 113px">
+            </colgroup>
             <thead>
                 <tr class ="near_wifi">
                     <th>거리(Km)</th>
@@ -90,9 +116,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="17" style="text-align: center;">위치 정보를 입력한 후에 조회해 주세요.</td>
+                <c:forEach items="${searchList}" var="wifi">
+                <tr class="warning">
+                    <td><c:out value="${wifi.distance}"/></td>
+                    <td><c:out value="${wifi.mgrNo}"/></td>
+                    <td><c:out value="${wifi.wrdofc}"/></td>
+                    <td><c:out value="${wifi.mainNm}"/></td>
+                    <td><c:out value="${wifi.adres1}"/></td>
+                    <td><c:out value="${wifi.adres2}"/></td>
+                    <td><c:out value="${wifi.floor}"/></td>
+                    <td><c:out value="${wifi.ty}"/></td>
+                    <td><c:out value="${wifi.mby}"/></td>
+                    <td><c:out value="${wifi.svcSe}"/></td>
+                    <td><c:out value="${wifi.cmcwr}"/></td>
+                    <td><c:out value="${wifi.year}"/></td>
+                    <td><c:out value="${wifi.door}"/></td>
+                    <td><c:out value="${wifi.remars3}"/></td>
+                    <td><c:out value="${wifi.lat}"/></td>
+                    <td><c:out value="${wifi.lnt}"/></td>
+                    <td><c:out value="${wifi.dttm}"/></td>
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

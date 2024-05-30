@@ -1,8 +1,11 @@
 package Dao;
 
 import Dto.RowInfoDto;
+import Vo.WifiVo;
+
 import java.sql.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WifiDao extends jdbcManager {
@@ -70,6 +73,58 @@ public class WifiDao extends jdbcManager {
             e.printStackTrace();
         } finally {
             conn.setAutoCommit(true);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public List<WifiVo> searchNearWifi(Double lat, Double lnt) {
+
+        String sql = "SELECT * " +
+                ", round((6371 * acos(cos(radians(" + lnt + ")) * cos(radians(lat)) * cos(radians(lnt) - radians(" + lat + ")) " +
+                "+ sin(radians(" + lnt + ")) * sin(radians(lat)))), 4) as distance " +
+                " FROM Wifi_info " +
+                " ORDER BY distance, X_SWIFI_MGR_NO" +
+                " LIMIT 20";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+
+            List<WifiVo> list = new ArrayList<>();
+
+
+            while (rs.next()) {
+                WifiVo wifiVo = new WifiVo(
+                        rs.getString("distance"),
+                        rs.getString("X_SWIFI_MGR_NO"),
+                        rs.getString("X_SWIFI_WRDOFC"),
+                        rs.getString("X_SWIFI_MAIN_NM"),
+                        rs.getString("X_SWIFI_ADRES1"),
+                        rs.getString("X_SWIFI_ADRES2"),
+                        rs.getString("X_SWIFI_INSTL_FLOOR"),
+                        rs.getString("X_SWIFI_INSTL_TY"),
+                        rs.getString("X_SWIFI_INSTL_MBY"),
+                        rs.getString("X_SWIFI_SVC_SE"),
+                        rs.getString("X_SWIFI_CMCWR"),
+                        rs.getString("X_SWIFI_CNSTC_YEAR"),
+                        rs.getString("X_SWIFI_INOUT_DOOR"),
+                        rs.getString("X_SWIFI_REMARS3"),
+                        rs.getString("LAT"),
+                        rs.getString("LNT"),
+                        rs.getString("WORK_DTTM")
+
+                );
+                list.add(wifiVo);
+            }
+            return list;
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            closeResultSet(rs);
             closeStatement(stmt);
             closeConnection(conn);
         }

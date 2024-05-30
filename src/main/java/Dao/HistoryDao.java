@@ -1,6 +1,7 @@
 package Dao;
 
 import Vo.HistoryVo;
+import Vo.WifiVo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,6 +66,34 @@ public class HistoryDao extends jdbcManager{
                 );
             }
             return list;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeStatement(stmt);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+        return null;
+    }
+
+    public Double[] selectLast() throws Exception {
+
+        String sql = "SELECT * FROM history " +
+                " ORDER BY id DESC LIMIT 1;";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            Double[] arr = new Double[2];
+
+            while (rs.next()) {
+                arr[0] = rs.getDouble("lat");
+                arr[1] = rs.getDouble("lnt");
+            }
+            return arr;
 
         } catch (Exception e) {
             e.printStackTrace();
