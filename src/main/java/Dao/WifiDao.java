@@ -18,20 +18,15 @@ public class WifiDao extends jdbcManager {
                 " x_swifi_remars3, lat, lnt, work_dttm) " +
                 " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-
         try {
             conn = createConnection();
-
             conn.setAutoCommit(false);
-
             stmt = conn.prepareStatement(sql);
 
             int batchSize = 1000;
-
             int count = 0;
 
             for (int i = 0; i < list.size(); i++) {
-
                 RowInfoDto infoDto = list.get(i);
                 stmt.setString(1, infoDto.getMgrNo());
                 stmt.setString(2, infoDto.getWrdofc());
@@ -62,6 +57,7 @@ public class WifiDao extends jdbcManager {
 
             stmt.executeBatch();
             conn.commit();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
