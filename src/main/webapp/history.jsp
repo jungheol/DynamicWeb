@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -64,6 +66,17 @@
                     <th>비고</th>
                 </tr>
             </thead>
+            <tbody>
+                <c:forEach items="${allList}" var="history">
+                    <tr class ="Info">
+                        <td><c:out value="${history.id}"/></td>
+                        <td><c:out value="${history.lat}"/></td>
+                        <td><c:out value="${history.lnt}"/></td>
+                        <td><c:out value="${history.date}"/></td>
+                        <td><button type ="button" class="button"> 삭제 </button></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
         </table>
     </div>
 </body>
