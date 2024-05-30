@@ -6,8 +6,8 @@ import lombok.*;
 public class HistoryVo {
 
     private String id;
-    private String lat;
-    private String lnt;
+    private double lat;
+    private double lnt;
     private String date;
 
 }

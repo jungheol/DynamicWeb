@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/history")
@@ -22,7 +21,7 @@ public class LoadHistoryServlet extends HttpServlet {
         // db에 있는 위치 히스토리 정보 불러오기
         List<HistoryVo> list = null;
         try {
-            list = historyDao.HistoryselectAll();
+            list = historyDao.historyselectAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

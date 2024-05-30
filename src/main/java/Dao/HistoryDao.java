@@ -5,6 +5,7 @@ import Vo.HistoryVo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +14,39 @@ public class HistoryDao extends jdbcManager{
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
-    public List<HistoryVo> HistoryselectAll() throws Exception {
+    public void saveHistory(Double lat, Double lnt) throws SQLException {
+
+        String sql = "INSERT INTO history (lat, lnt, date) " +
+                    " VALUES(?, ?, DATETIME('now'));";
+
+        try {
+            conn = createConnection();
+            conn.setAutoCommit(false);
+            stmt = conn.prepareStatement(sql);
+            stmt.setDouble(1, lat);
+            stmt.setDouble(2, lnt);
+            conn.commit();
+
+            int affectedRows = stmt.executeUpdate();
+
+            if(affectedRows > 0) {
+                System.out.println("저장 성공");
+            } else {
+                System.out.println("저장 실패");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            conn.setAutoCommit(true);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public List<HistoryVo> historyselectAll() throws Exception {
 
         String sql = "SELECT * FROM history " +
-                    "ORDER BY id DESC;";
+                    " ORDER BY id DESC;";
 
         try {
             conn = createConnection();
@@ -28,8 +58,8 @@ public class HistoryDao extends jdbcManager{
             while (rs.next()) {
                 list.add(new HistoryVo(
                         rs.getString("id"),
-                        rs.getString("lat"),
-                        rs.getString("lnt"),
+                        rs.getDouble("lat"),
+                        rs.getDouble("lnt"),
                         rs.getString("date")
                         )
                 );
@@ -39,7 +69,7 @@ public class HistoryDao extends jdbcManager{
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            conn.setAutoCommit(true);
+            closeStatement(stmt);
             closeStatement(stmt);
             closeConnection(conn);
         }

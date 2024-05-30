@@ -55,6 +55,14 @@ public class WifiDao extends jdbcManager {
                 }
             }
 
+            int affectedRows = stmt.executeUpdate();
+
+            if(affectedRows > 0) {
+                System.out.println("저장 성공");
+            } else {
+                System.out.println("저장 실패");
+            }
+
             stmt.executeBatch();
             conn.commit();
 
