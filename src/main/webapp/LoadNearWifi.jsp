@@ -63,9 +63,9 @@
         </p>
         <div class="search-bar">
             <label for="lat">LAT:</label>
-            <input type="text" id="lat" name="lat" value="0.0">
+            <input type="text" id="lat" name="lat" value=<c:out value="${lat}"/>>
             <label for="lnt">LNT:</label>
-            <input type="text" id="lnt" name="lnt" value="0.0">
+            <input type="text" id="lnt" name="lnt" value=<c:out value="${lnt}"/>>
             <button id="get-location">내 위치 가져오기</button>
             <form id ="wifi-form" action="/location">
             <button>근처 WIFI 정보 보기</button>

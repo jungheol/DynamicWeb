@@ -37,8 +37,8 @@ public class SaveLocationServlet extends HttpServlet {
 
         List<WifiVo> searchList = wifiDao.searchNearWifi(lat, lnt);
         req.setAttribute("searchList", searchList);
-
-        System.out.println(searchList);
+        req.setAttribute("lat", lat);
+        req.setAttribute("lnt", lnt);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/LoadNearWifi.jsp");
         requestDispatcher.forward(req, res);
