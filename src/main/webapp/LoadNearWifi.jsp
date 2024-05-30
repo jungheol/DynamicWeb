@@ -62,40 +62,18 @@
         <a href="/load-wifi">Open API 와이파이 정보 가져오기</a>
         </p>
         <div class="search-bar">
-            <form id="location-form" action="/location" method="post">
             <label for="lat">LAT:</label>
             <input type="text" id="lat" name="lat" value="0.0">
             <label for="lnt">LNT:</label>
             <input type="text" id="lnt" name="lnt" value="0.0">
             <button id="get-location">내 위치 가져오기</button>
-            </form>
-            <form id ="wifi-form" action="/LoadNearWifi">
+            <form id ="wifi-form" action="/location">
             <button>근처 WIFI 정보 보기</button>
             </form>
         </div>
-
-        <table class="table" style="undefinedtable-layout: fixed; width: 1833px">
-            <colgroup>
-                <col style="width: 86px">
-                <col style="width: 77px">
-                <col style="width: 74px">
-                <col style="width: 147px">
-                <col style="width: 197px">
-                <col style="width: 127px">
-                <col style="width: 83px">
-                <col style="width: 134px">
-                <col style="width: 99px">
-                <col style="width: 144px">
-                <col style="width: 104px">
-                <col style="width: 59px">
-                <col style="width: 73px">
-                <col style="width: 116px">
-                <col style="width: 97px">
-                <col style="width: 103px">
-                <col style="width: 113px">
-            </colgroup>
+        <table>
             <thead>
-                <tr class ="near_wifi">
+                <tr>
                     <th>거리(Km)</th>
                     <th>관리번호</th>
                     <th>자치구</th>
@@ -117,7 +95,7 @@
             </thead>
             <tbody>
                 <c:forEach items="${searchList}" var="wifi">
-                <tr class="warning">
+                <tr>
                     <td><c:out value="${wifi.distance}"/></td>
                     <td><c:out value="${wifi.mgrNo}"/></td>
                     <td><c:out value="${wifi.wrdofc}"/></td>

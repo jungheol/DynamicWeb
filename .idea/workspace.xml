@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9d554ff-d690-486f-97e9-d12917277c1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoadNearWifiServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoadNearWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/LoadNearWifi.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,16 +198,6 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/LoadNearWifiServlet.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java</url>
           <line>95</line>
           <option name="timeStamp" value="33" />
@@ -215,6 +206,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java</url>
           <line>89</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

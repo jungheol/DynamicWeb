@@ -55,15 +55,13 @@
         <a href="/load-wifi">Open API 와이파이 정보 가져오기</a>
         </p>
         <div class="search-bar">
-            <form id="location-form" action="/location" method="post">
+            <form id ="wifi-form" action="/location" method="post">
             <label for="lat">LAT:</label>
             <input type="text" id="lat" name="lat" value="0.0">
             <label for="lnt">LNT:</label>
             <input type="text" id="lnt" name="lnt" value="0.0">
-            <button id="get-location">내 위치 가져오기</button>
-            </form>
-            <form id ="wifi-form" action="/LoadNearWifi">
-            <button>근처 WIFI 정보 보기</button>
+            <button type="button" id="get-location">내 위치 가져오기</button>
+            <button type="submit">근처 WIFI 정보 보기</button>
             </form>
         </div>
 
@@ -97,14 +95,11 @@
         </table>
     </div>
 <script>
-    document.getElementById('get-location').addEventListener('click', function(event) {
-        event.preventDefault();
+    document.getElementById('get-location').addEventListener('click', function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 document.getElementById('lat').value = position.coords.latitude;
                 document.getElementById('lnt').value = position.coords.longitude;
-
-                document.getElementById('location-form').submit();
             }, function(error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
             });
