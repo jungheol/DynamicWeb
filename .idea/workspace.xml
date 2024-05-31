@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9d554ff-d690-486f-97e9-d12917277c1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoadNearWifiServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoadWifiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoadWifiServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/LoadNearWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/LoadNearWifi.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Servlet" />
         <option value="Class" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -69,7 +68,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4183908",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -120,9 +119,6 @@
       <option name="catalinaBase" value="$USER_HOME$/.SmartTomcat/DynamicWeb/DynamicWeb" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -209,8 +205,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="35" />
+          <line>42</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/WifiDao.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

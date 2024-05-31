@@ -99,7 +99,13 @@
                     <td><c:out value="${wifi.distance}"/></td>
                     <td><c:out value="${wifi.mgrNo}"/></td>
                     <td><c:out value="${wifi.wrdofc}"/></td>
-                    <td><c:out value="${wifi.mainNm}"/></td>
+                    <td>
+                        <p>
+                            <a href="/detail?mgrNo=${wifi.mgrNo}">
+                                <c:out value="${wifi.mainNm}"/>
+                            </a>
+                        </p>
+                    </td>
                     <td><c:out value="${wifi.adres1}"/></td>
                     <td><c:out value="${wifi.adres2}"/></td>
                     <td><c:out value="${wifi.floor}"/></td>

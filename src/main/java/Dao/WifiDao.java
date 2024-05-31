@@ -129,4 +129,69 @@ public class WifiDao extends jdbcManager {
             closeConnection(conn);
         }
     }
+
+    public void removeAllWifi(){
+
+        String sql = "DELETE FROM Wifi_info; ";
+
+        try {
+            conn = createConnection();
+            conn.setAutoCommit(false);
+
+            stmt = conn.prepareStatement(sql);
+            conn.commit();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public List<WifiVo> detailWifi(String mainNm) {
+
+        String sql = "SELECT *, 0 as distance FROM Wifi_info WHERE x_swifi_mgr_no = ?;";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, mainNm);
+            rs = stmt.executeQuery();
+
+            List<WifiVo> list = new ArrayList<>();
+
+            while (rs.next()) {
+                WifiVo wifiVo = new WifiVo(
+                        rs.getString("distance"),
+                        rs.getString("X_SWIFI_MGR_NO"),
+                        rs.getString("X_SWIFI_WRDOFC"),
+                        rs.getString("X_SWIFI_MAIN_NM"),
+                        rs.getString("X_SWIFI_ADRES1"),
+                        rs.getString("X_SWIFI_ADRES2"),
+                        rs.getString("X_SWIFI_INSTL_FLOOR"),
+                        rs.getString("X_SWIFI_INSTL_TY"),
+                        rs.getString("X_SWIFI_INSTL_MBY"),
+                        rs.getString("X_SWIFI_SVC_SE"),
+                        rs.getString("X_SWIFI_CMCWR"),
+                        rs.getString("X_SWIFI_CNSTC_YEAR"),
+                        rs.getString("X_SWIFI_INOUT_DOOR"),
+                        rs.getString("X_SWIFI_REMARS3"),
+                        rs.getString("LAT"),
+                        rs.getString("LNT"),
+                        rs.getString("WORK_DTTM")
+
+                );
+                list.add(wifiVo);
+            }
+            return list;
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            closeResultSet(rs);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
 }
