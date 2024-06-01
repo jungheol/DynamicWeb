@@ -22,8 +22,8 @@ public class LoadDetailWifiServlet extends HttpServlet {
         List<WifiVo> wifiDetail = wifiDao.detailWifi(mgrNo);
         req.setAttribute("wifiDetail", wifiDetail);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/DetailWifi.jsp");
-        requestDispatcher.forward(req, res);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/DetailWifi.jsp");
+        dispatcher.forward(req, res);
     }
 
     @Override

@@ -7,7 +7,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>와이파이 정보 구하기</title>
+    <title>위치 히스토리 목록</title>
     <style>
         body {
             font-family: Arial, sans-serif;

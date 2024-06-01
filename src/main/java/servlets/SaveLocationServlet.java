@@ -40,7 +40,7 @@ public class SaveLocationServlet extends HttpServlet {
         req.setAttribute("lat", lat);
         req.setAttribute("lnt", lnt);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/LoadNearWifi.jsp");
-        requestDispatcher.forward(req, res);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/LoadNearWifi.jsp");
+        dispatcher.forward(req, res);
     }
 }

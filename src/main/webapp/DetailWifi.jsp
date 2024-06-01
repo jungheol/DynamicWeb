@@ -6,6 +6,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
     <title>와이파이 상세 정보</title>
 </head>
 <body>
@@ -17,7 +34,8 @@
         <a href="/bookmark-list">북마크 보기</a> |
         <a href="/bookmark-group">북마크 그룹 관리</a>
     </p>
-    <c:forEach var="wifi" items="${wifiDetail}">
+    <button>북마크 추가하기</button>
+    <c:forEach items="${wifiDetail}" var="wifi">
         <table border="1">
             <tr>
                 <th>거리(Km)</th>
