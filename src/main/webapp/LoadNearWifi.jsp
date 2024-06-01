@@ -6,35 +6,22 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
     <title>와이파이 정보 구하기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
         .search-bar {
             margin-bottom: 20px;
         }
         .search-bar input[type="text"] {
-            padding: 10px;
+            padding: 3px;
             margin-right: 10px;
             width: 150px;
-        }
-        .search-bar button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
         }
         table {
             width: 100%;
@@ -57,17 +44,19 @@
     <div class="container">
         <h1>와이파이 정보 구하기</h1>
         <p>
-        <a href="/">홈</a> |
-        <a href="/history">와이파이 히스토리 목록</a> |
-        <a href="/load-wifi">Open API 와이파이 정보 가져오기</a>
+            <a href="/">홈</a> |
+            <a href="/history">와이파이 히스토리 목록</a> |
+            <a href="/load-wifi">Open API 와이파이 정보 가져오기</a> |
+            <a href="/bookmark-list">북마크 보기</a> |
+            <a href="/bookmark-group">북마크 그룹 관리</a>
         </p>
         <div class="search-bar">
+            <form id ="wifi-form" action="/location" method="post">
             <label for="lat">LAT:</label>
             <input type="text" id="lat" name="lat" value=<c:out value="${lat}"/>>
             <label for="lnt">LNT:</label>
             <input type="text" id="lnt" name="lnt" value=<c:out value="${lnt}"/>>
             <button id="get-location">내 위치 가져오기</button>
-            <form id ="wifi-form" action="/location">
             <button>근처 WIFI 정보 보기</button>
             </form>
         </div>

@@ -11,23 +11,16 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
         .search-bar {
             margin-bottom: 20px;
         }
         .search-bar input[type="text"] {
-            padding: 10px;
+            padding: 3px;
             margin-right: 10px;
             width: 150px;
-        }
-        .search-bar button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
         }
         table {
             width: 100%;
@@ -52,7 +45,9 @@
         <p>
         <a href="/">홈</a> |
         <a href="/history">와이파이 히스토리 목록</a> |
-        <a href="/load-wifi">Open API 와이파이 정보 가져오기</a>
+        <a href="/load-wifi">Open API 와이파이 정보 가져오기</a> |
+        <a href="/bookmark-list">북마크 보기</a> |
+        <a href="/bookmark-group">북마크 그룹 관리</a>
         </p>
         <div class="search-bar">
             <form id ="wifi-form" action="/location" method="post">
