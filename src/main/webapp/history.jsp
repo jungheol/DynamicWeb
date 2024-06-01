@@ -69,11 +69,14 @@
             <tbody>
                 <c:forEach items="${allList}" var="history">
                     <tr class ="Info">
+                        <form action="/history" method="get">
+                        <input type="hidden" name="id" value="${history.id}"/>
                         <td><c:out value="${history.id}"/></td>
                         <td><c:out value="${history.lat}"/></td>
                         <td><c:out value="${history.lnt}"/></td>
                         <td><c:out value="${history.date}"/></td>
-                        <td><button type ="button" class="button"> 삭제 </button></td>
+                        <td><button type ="submit" class="button"> 삭제 </button></td>
+                        </form>
                     </tr>
                 </c:forEach>
             </tbody>

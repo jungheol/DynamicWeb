@@ -26,15 +26,16 @@ public class HistoryDao extends jdbcManager{
             stmt = conn.prepareStatement(sql);
             stmt.setDouble(1, lat);
             stmt.setDouble(2, lnt);
-            conn.commit();
 
             int affectedRows = stmt.executeUpdate();
-
             if(affectedRows > 0) {
                 System.out.println("저장 성공");
             } else {
                 System.out.println("저장 실패");
             }
+
+            conn.commit();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -70,38 +71,38 @@ public class HistoryDao extends jdbcManager{
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            closeStatement(stmt);
+            closeResultSet(rs);
             closeStatement(stmt);
             closeConnection(conn);
         }
         return null;
     }
 
-    public Double[] selectLast() throws Exception {
+    public void deleteHistory(int id) throws Exception {
 
-        String sql = "SELECT * FROM history " +
-                " ORDER BY id DESC LIMIT 1;";
+        String sql = "DELETE FROM history WHERE id = ?;";
 
         try {
             conn = createConnection();
+            conn.setAutoCommit(false);
             stmt = conn.prepareStatement(sql);
-            rs = stmt.executeQuery();
+            stmt.setInt(1, id);
 
-            Double[] arr = new Double[2];
-
-            while (rs.next()) {
-                arr[0] = rs.getDouble("lat");
-                arr[1] = rs.getDouble("lnt");
+            int affectedRows = stmt.executeUpdate();
+            if(affectedRows > 0) {
+                System.out.println("삭제 성공");
+            } else {
+                System.out.println("삭제 실패");
             }
-            return arr;
+
+            conn.commit();
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            closeStatement(stmt);
+            conn.setAutoCommit(true);
             closeStatement(stmt);
             closeConnection(conn);
         }
-        return null;
     }
 }

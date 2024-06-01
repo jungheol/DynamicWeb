@@ -18,6 +18,16 @@ public class LoadHistoryServlet extends HttpServlet {
     HistoryDao historyDao = new HistoryDao();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        // 삭제 버튼 눌렀을 때 동작
+        if(req.getParameter("id") != null) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            try {
+                historyDao.deleteHistory(id);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         // db에 있는 위치 히스토리 정보 불러오기
         List<HistoryVo> list = null;
         try {
