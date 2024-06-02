@@ -14,13 +14,22 @@
     table, th, td {
         border: 1px solid #ddd;
     }
-    th, td {
-        padding: 8px;
+    th{
         text-align: center;
+    }
+    td {
+        padding: 10px;
+        text-align: left;
     }
     th {
         background-color: #4CAF50;
         color: white;
+    }
+    .button-container {
+        text-align : center;
+    }
+    button {
+        margin-top: 10px;
     }
     </style>
     <title>북마크 그룹</title>
@@ -34,29 +43,20 @@
         <a href="/bookmark-list">북마크 보기</a> |
         <a href="/bookmark-group">북마크 그룹 관리</a>
     </p>
-    <form id ="bookmark-form" action="/bookmark-group-add.jsp">
-    <button>북마크 그룹 이름 추가</button>
-    </form>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>북마크 이름</th>
-            <th>순서</th>
-            <th>등록일자</th>
-            <th>수정일자</th>
-            <th>비고</th>
-        </tr>
-        <c:forEach items="${group}" var="group">
+    <form id ="bookmark-form" action="/bookmark-group-add" method="get">
+        <table>
             <tr>
-                <td><c:out value="${group.id}"/></td>
-                <td><c:out value="${group.name}"/></td>
-                <td><c:out value="${group.order}"/></td>
-                <td><c:out value="${group.addDate}"/></td>
-                <td><c:out value="${group.modifyDate}"/></td>
-                <td><a href="/bookmark-group-edit"> 수정 </a> <a href="/bookmark-group-delete"> 삭제 </a></td>
+                <th>북마크 이름</th>
+                <td><input type = "text" id="name" name="name"></td>
             </tr>
-        </c:forEach>
-    </table>
+            <tr>
+                <th>순서</th>
+                <td><input type = "text" id="order_idx" name="order_idx"></td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <button type="submit">추가</button>
+        </div>
+    </form>
 </body>
 </html>
