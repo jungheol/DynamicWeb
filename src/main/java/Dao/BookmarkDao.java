@@ -44,10 +44,78 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
+    public void modifyBookmark(String name, int order_idx, String original_name) throws SQLException {
+
+        String sql = "UPDATE bookmark_group " +
+                " SET name = ?, order_idx = ?, modifyDate = DATETIME('now') " +
+                " WHERE name = ?;";
+
+        try {
+            conn = createConnection();
+            conn.setAutoCommit(false);
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setInt(2, order_idx);
+            stmt.setString(3, original_name);
+
+            int affectedRows = stmt.executeUpdate();
+            if(affectedRows > 0) {
+                System.out.println("수정 성공");
+            } else {
+                System.out.println("수정 실패");
+            }
+
+            conn.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            conn.setAutoCommit(true);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public List<BookmarkVo> selectBookmarkOnedata(String name, int order_idx) throws Exception {
+
+        String sql = "SELECT * FROM bookmark_group " +
+                " WHERE name = ? and order_idx = ?";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setInt(2, order_idx);
+            rs = stmt.executeQuery();
+
+            List<BookmarkVo> list = new ArrayList<>();
+
+            while (rs.next()) {
+                list.add(new BookmarkVo(
+                                rs.getInt("id"),
+                                rs.getString("name"),
+                                rs.getInt("order_idx"),
+                                rs.getString("addDate"),
+                                rs.getString("modifyDate")
+                        )
+                );
+            }
+            return list;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+        return null;
+    }
+
     public List<BookmarkVo> selectbookmarkAll() throws Exception {
 
         String sql = "SELECT * FROM bookmark_group " +
-                " ORDER BY order_idx DESC;";
+                " ORDER BY order_idx;";
 
         try {
             conn = createConnection();
