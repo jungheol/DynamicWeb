@@ -25,6 +25,8 @@ public class LoadWifiServlet extends HttpServlet {
             int start = 0;
             int end = 999;
 
+            wifiDao.removeAllWifi();
+
             for (int i = 0; i < count; i++) {
                 List<RowInfoDto> rowInfoDtoList = getApi.getApiDto(start, end).getWifiDetails();
                 wifiDao.saveAllWifiDetailList(rowInfoDtoList);

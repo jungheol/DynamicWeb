@@ -58,14 +58,6 @@ public class WifiDao extends jdbcManager {
                 }
             }
 
-            int affectedRows = stmt.executeUpdate();
-
-            if(affectedRows > 0) {
-                System.out.println("저장 성공");
-            } else {
-                System.out.println("저장 실패");
-            }
-
             stmt.executeBatch();
             conn.commit();
 
@@ -130,8 +122,8 @@ public class WifiDao extends jdbcManager {
         }
     }
 
-    public void removeAllWifi(){
-
+    public void removeAllWifi() {
+        int result = 0;
         String sql = "DELETE FROM Wifi_info; ";
 
         try {
@@ -139,6 +131,7 @@ public class WifiDao extends jdbcManager {
             conn.setAutoCommit(false);
 
             stmt = conn.prepareStatement(sql);
+            stmt.executeUpdate();
             conn.commit();
 
         } catch (ClassNotFoundException | SQLException e) {
