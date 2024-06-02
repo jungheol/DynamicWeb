@@ -41,8 +41,6 @@ public class jdbcManager {
 
         return DriverManager.getConnection("jdbc:sqlite:" + path);
     }
-
-
 }
 
 

@@ -18,7 +18,7 @@ public class HistoryDao extends jdbcManager{
     public void saveHistory(Double lat, Double lnt) throws SQLException {
 
         String sql = "INSERT INTO history (lat, lnt, date) " +
-                    " VALUES(?, ?, DATETIME('now'));";
+                    " VALUES(?, ?, DATETIME('now', '+9 hours'));";
 
         try {
             conn = createConnection();

@@ -17,7 +17,7 @@ public class BookmarkDao extends jdbcManager{
     public void saveBookmark(String name, int order_idx) throws SQLException {
 
         String sql = "INSERT INTO bookmark_group (name, order_idx, addDate) " +
-                " VALUES(?, ?, DATETIME('now'));";
+                " VALUES(?, ?, DATETIME('now', '+9 hours'));";
 
         try {
             conn = createConnection();
@@ -47,7 +47,7 @@ public class BookmarkDao extends jdbcManager{
     public void modifyBookmark(String name, int order_idx, int id) throws SQLException {
 
         String sql = "UPDATE bookmark_group " +
-                " SET name = ?, order_idx = ?, modifyDate = DATETIME('now') " +
+                " SET name = ?, order_idx = ?, modifyDate = DATETIME('now', '+9 hours') " +
                 " WHERE id = ?;";
 
         try {
