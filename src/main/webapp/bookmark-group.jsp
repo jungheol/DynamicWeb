@@ -54,7 +54,8 @@
                 <td><c:out value="${group.order}"/></td>
                 <td><c:out value="${group.addDate}"/></td>
                 <td><c:out value="${group.modifyDate}"/></td>
-                <td><a href="/bookmark-group-select?name=${group.name}&order=${group.order}"> 수정 </a> <a href="/bookmark-group-delete"> 삭제 </a></td>
+                <td><a href="/bookmark-group-select?id=${group.id}&action=modify"> 수정 </a>
+                <a href="/bookmark-group-select?id=${group.id}&action=delete"> 삭제 </a></td>
             </tr>
         </c:forEach>
     </table>

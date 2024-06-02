@@ -44,11 +44,11 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public void modifyBookmark(String name, int order_idx, String original_name) throws SQLException {
+    public void modifyBookmark(String name, int order_idx, int id) throws SQLException {
 
         String sql = "UPDATE bookmark_group " +
                 " SET name = ?, order_idx = ?, modifyDate = DATETIME('now') " +
-                " WHERE name = ?;";
+                " WHERE id = ?;";
 
         try {
             conn = createConnection();
@@ -56,7 +56,7 @@ public class BookmarkDao extends jdbcManager{
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, name);
             stmt.setInt(2, order_idx);
-            stmt.setString(3, original_name);
+            stmt.setInt(3, id);
 
             int affectedRows = stmt.executeUpdate();
             if(affectedRows > 0) {
@@ -76,16 +76,44 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public List<BookmarkVo> selectBookmarkOnedata(String name, int order_idx) throws Exception {
+    public void deleteBookmark(int id) throws SQLException {
+
+        String sql = "DELETE FROM bookmark_group " +
+                " WHERE id = ?;";
+
+        try {
+            conn = createConnection();
+            conn.setAutoCommit(false);
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            int affectedRows = stmt.executeUpdate();
+            if(affectedRows > 0) {
+                System.out.println("삭제 성공");
+            } else {
+                System.out.println("삭제 실패");
+            }
+
+            conn.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            conn.setAutoCommit(true);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public List<BookmarkVo> selectBookmarkOnedata(int id) throws Exception {
 
         String sql = "SELECT * FROM bookmark_group " +
-                " WHERE name = ? and order_idx = ?";
+                " WHERE id = ?";
 
         try {
             conn = createConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, name);
-            stmt.setInt(2, order_idx);
+            stmt.setInt(1, id);
             rs = stmt.executeQuery();
 
             List<BookmarkVo> list = new ArrayList<>();

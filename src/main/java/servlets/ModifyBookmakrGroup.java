@@ -17,11 +17,11 @@ public class ModifyBookmakrGroup extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String originalName = req.getParameter("original_name");
+        int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         int order_idx = Integer.parseInt(req.getParameter("order_idx"));
         try {
-            bookmarkDao.modifyBookmark(name, order_idx, originalName);
+            bookmarkDao.modifyBookmark(name, order_idx, id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
