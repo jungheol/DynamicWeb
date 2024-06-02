@@ -81,8 +81,8 @@ public class WifiDao extends jdbcManager {
     public List<WifiVo> searchNearWifi(Double lat, Double lnt) {
 
         String sql = "SELECT * " +
-                ", round((6371 * acos(cos(radians(" + lnt + ")) * cos(radians(lat)) * cos(radians(lnt) - radians(" + lat + ")) " +
-                "+ sin(radians(" + lnt + ")) * sin(radians(lat)))), 4) as distance " +
+                ", round((6371 *  acos(cos(radians(" + lat + ")) * cos(radians(lat)) * cos(radians(lnt) - radians(" + lnt + ")) " +
+                "+ sin(radians(" + lat + ")) * sin(radians(lat)))), 4) as distance " +
                 " FROM Wifi_info " +
                 " ORDER BY distance, X_SWIFI_MGR_NO" +
                 " LIMIT 20";
