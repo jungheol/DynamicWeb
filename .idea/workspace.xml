@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9d554ff-d690-486f-97e9-d12917277c1a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-delete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/WifiDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/jdbcManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/JdbcManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoadDetailWifiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoadDetailWifiServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveLocationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/TestServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/detailWifi.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoadNearWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/loadNearWifi.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,23 +173,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/TestServlet.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/TestServlet.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java</url>
-          <line>88</line>
+          <line>87</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java</url>
-          <line>26</line>
+          <line>25</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

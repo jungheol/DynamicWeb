@@ -32,7 +32,7 @@ public class LoadDetailWifiServlet extends HttpServlet {
         req.setAttribute("wifiDetail", wifiDetail);
         req.setAttribute("bookmarkGroupList", bookmarkList);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/DetailWifi.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/detailWifi.jsp");
         dispatcher.forward(req, res);
     }
 

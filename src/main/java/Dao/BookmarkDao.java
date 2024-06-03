@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookmarkDao extends jdbcManager{
+public class BookmarkDao extends JdbcManager {
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;

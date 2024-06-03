@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WifiDao extends jdbcManager {
+public class WifiDao extends JdbcManager {
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;

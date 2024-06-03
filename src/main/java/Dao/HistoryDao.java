@@ -1,7 +1,6 @@
 package Dao;
 
 import Vo.HistoryVo;
-import Vo.WifiVo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistoryDao extends jdbcManager{
+public class HistoryDao extends JdbcManager {
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;

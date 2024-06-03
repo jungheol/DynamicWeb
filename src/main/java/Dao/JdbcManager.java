@@ -3,7 +3,7 @@ package Dao;
 import java.sql.*;
 
 
-public class jdbcManager {
+public class JdbcManager {
 
     public void closeResultSet(ResultSet rs){
         try {
