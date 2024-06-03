@@ -34,7 +34,14 @@
         <a href="/bookmark-list">북마크 보기</a> |
         <a href="/bookmark-group">북마크 그룹 관리</a>
     </p>
-    <button>북마크 추가하기</button>
+    <form action="/saveBookmark" method="get">
+        <select name="bookmarkGroup" id="bookmarkGroup">
+            <option>북마크 그룹 이름 선택</option>
+            <c:forEach items="${bookmarkGroupList}" var="list">
+                <option value="${list.name}">${list.name}</option>
+            </c:forEach>
+        </select>
+        <button type="submit">북마크 추가하기</button>
     <c:forEach items="${wifiDetail}" var="wifi">
         <table border="1">
             <tr>
@@ -51,6 +58,7 @@
             </tr>
             <tr>
                 <th>와이파이명</th>
+                <input type="hidden" name="wifiName" value=<c:out value="${wifi.mainNm}"/>>
                 <td><c:out value="${wifi.mainNm}"/></td>
             </tr>
             <tr>
@@ -107,5 +115,6 @@
             </tr>
         </table>
     </c:forEach>
+    </form>
 </body>
 </html>

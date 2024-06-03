@@ -21,7 +21,7 @@ public class SaveBookmarkGroup extends HttpServlet {
         int order_idx = Integer.parseInt(req.getParameter("order_idx"));
 
         try {
-            bookmarkDao.saveBookmark(name, order_idx);
+            bookmarkDao.saveBookmarkGroup(name, order_idx);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

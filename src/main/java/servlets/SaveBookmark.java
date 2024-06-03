@@ -1,9 +1,6 @@
 package servlets;
 
 import Dao.BookmarkDao;
-import Dao.WifiDao;
-import Vo.BookmarkVo;
-import Vo.WifiVo;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,27 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
 
-@WebServlet("/detail")
-public class LoadDetailWifiServlet extends HttpServlet {
-    WifiDao wifiDao = new WifiDao();
+@WebServlet("/saveBookmark")
+public class SaveBookmark extends HttpServlet {
+
     BookmarkDao bookmarkDao = new BookmarkDao();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String mgrNo = req.getParameter("mgrNo");
+        String groupName = req.getParameter("bookmarkGroup");
+        String wifiName = req.getParameter("wifiName");
 
-        List<WifiVo> wifiDetail = wifiDao.detailWifi(mgrNo);
-        List<BookmarkVo> bookmarkList;
         try {
-            bookmarkList = bookmarkDao.selectbookmarkAll();
-        } catch (Exception e) {
+            bookmarkDao.saveBookmark(groupName, wifiName);
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        req.setAttribute("wifiDetail", wifiDetail);
-        req.setAttribute("bookmarkGroupList", bookmarkList);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/DetailWifi.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookmark-add-submit.jsp");
         dispatcher.forward(req, res);
     }
 
