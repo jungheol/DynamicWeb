@@ -30,6 +30,9 @@
     button {
         margin-top: 10px;
     }
+    .spacing {
+        margin-top: 10px;
+    }
     </style>
     <title>북마크 그룹</title>
 </head>
@@ -42,19 +45,25 @@
         <a href="/bookmark-list">북마크 보기</a> |
         <a href="/bookmark-group">북마크 그룹 관리</a>
     </p>
-    <form id ="bookmark-form" action="/bookmark-group-add" method="get">
-        <table>
+    <a> 북마크를 삭제하시겠습니까? </a>
+    <form id ="bookmark-form" action="/bookmark-delete" method="get">
+        <table class="spacing">
             <tr>
                 <th>북마크 이름</th>
-                <td><input type = "text" id="name" name="name"></td>
+                <td><c:out value="${bookmark_name}"/></td>
             </tr>
             <tr>
-                <th>순서</th>
-                <td><input type = "text" id="order_idx" name="order_idx"></td>
+                <th>와이파이명</th>
+                <td><c:out value="${wifi_name}"/></td>
+            </tr>
+            <tr>
+                <th>등록일자</th>
+                <td><c:out value="${date}"/></td>
             </tr>
         </table>
+        <input type="hidden" name="id" value=<c:out value="${id}"/>>
         <div class="button-container">
-            <button type="submit">추가</button>
+            <a href="/bookmark-list">돌아가기</a> | <button type="submit">삭제</button>
         </div>
     </form>
 </body>

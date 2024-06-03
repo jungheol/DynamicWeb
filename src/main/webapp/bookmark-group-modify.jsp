@@ -14,16 +14,15 @@
     table, th, td {
         border: 1px solid #ddd;
     }
-    th{
+    th {
+        width: 25%;
+        background-color: #4CAF50;
+        color: white;
         text-align: center;
     }
     td {
         padding: 10px;
         text-align: left;
-    }
-    th {
-        background-color: #4CAF50;
-        color: white;
     }
     .button-container {
         text-align : center;

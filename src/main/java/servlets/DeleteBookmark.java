@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/bookmark-group-delete")
-public class DeleteBookmarkGroup extends HttpServlet {
-    BookmarkDao bookmarkDao = new BookmarkDao();
+@WebServlet("/bookmark-delete")
+public class DeleteBookmark extends HttpServlet {
 
+    BookmarkDao bookmarkDao = new BookmarkDao();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         try {
-            bookmarkDao.deleteBookmarkGroup(id);
+            bookmarkDao.deleteBookmark(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookmark-group-delete-submit.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookmark-delete-submit.jsp");
         dispatcher.forward(req, res);
     }
 

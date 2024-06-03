@@ -8,12 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoadWifiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoadWifiServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ModifyBookmakrGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ModifyBookmakrGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmarkGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmarkGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteBookmarkGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteBookmarkGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,16 +180,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/servlets/TestServlet.java</url>
           <line>22</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/api/GetApi.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/LoadDetailWifiServlet.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Dao/HistoryDao.java</url>

@@ -19,6 +19,7 @@
             text-align: center;
         }
         th {
+            width: 25%;
             background-color: #4CAF50;
             color: white;
         }

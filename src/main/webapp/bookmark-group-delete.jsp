@@ -14,16 +14,15 @@
     table, th, td {
         border: 1px solid #ddd;
     }
-    th{
+    th {
+        width: 25%;
+        background-color: #4CAF50;
+        color: white;
         text-align: center;
     }
     td {
         padding: 10px;
         text-align: left;
-    }
-    th {
-        background-color: #4CAF50;
-        color: white;
     }
     .button-container {
         text-align : center;
@@ -51,11 +50,11 @@
         <table class="spacing">
             <tr>
                 <th>북마크 이름</th>
-                <td><input type = "text" id="name" name="name" value=<c:out value="${name}"/>></td>
+                <td><c:out value="${name}"/></td>
             </tr>
             <tr>
                 <th>순서</th>
-                <td><input type = "text" id="order_idx" name="order_idx" value=<c:out value="${order_idx}"/>></td>
+                <td><c:out value="${order_idx}"/></td>
             </tr>
         </table>
         <input type="hidden" name="id" value=<c:out value="${id}"/>>

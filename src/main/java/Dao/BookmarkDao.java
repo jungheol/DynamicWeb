@@ -107,9 +107,38 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public void deleteBookmark(int id) throws SQLException {
+    public void deleteBookmarkGroup(int id) throws SQLException {
 
         String sql = "DELETE FROM bookmark_group " +
+                " WHERE id = ?;";
+
+        try {
+            conn = createConnection();
+            conn.setAutoCommit(false);
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            int affectedRows = stmt.executeUpdate();
+            if(affectedRows > 0) {
+                System.out.println("삭제 성공");
+            } else {
+                System.out.println("삭제 실패");
+            }
+
+            conn.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            conn.setAutoCommit(true);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+    }
+
+    public void deleteBookmark(int id) throws SQLException {
+
+        String sql = "DELETE FROM bookmark_list " +
                 " WHERE id = ?;";
 
         try {
@@ -156,6 +185,40 @@ public class BookmarkDao extends jdbcManager{
                                 rs.getInt("order_idx"),
                                 rs.getString("addDate"),
                                 rs.getString("modifyDate")
+                        )
+                );
+            }
+            return list;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+        return null;
+    }
+
+    public List<BookmarkVo> selectBookmarkOnedata(int id) throws Exception {
+
+        String sql = "SELECT * FROM bookmark_list " +
+                " WHERE id = ?";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+
+            List<BookmarkVo> list = new ArrayList<>();
+
+            while (rs.next()) {
+                list.add(new BookmarkVo(
+                                rs.getInt("id"),
+                                rs.getString("bookmark_name"),
+                                rs.getString("wifi_name"),
+                                rs.getString("date")
                         )
                 );
             }

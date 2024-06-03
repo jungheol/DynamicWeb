@@ -50,7 +50,7 @@
                 <td><c:out value="${list.wifiName}"/></td>
                 <td><c:out value="${list.date}"/></td>
                 <td>
-                <a href="/bookmark-list-select?id=${list.id}"> 삭제 </a>
+                <a href="/bookmark-select?id=${list.id}"> 삭제 </a>
                 </td>
             </tr>
         </c:forEach>
