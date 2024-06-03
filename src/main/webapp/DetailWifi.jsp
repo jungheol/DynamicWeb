@@ -36,10 +36,10 @@
         <a href="/bookmark-group">북마크 그룹 관리</a>
     </p>
     <form action="/saveBookmark" method="get">
-        <select name="bookmarkGroup" id="bookmarkGroup">
+        <select name="bookmarkId" id="bookmarkGroup">
             <option>북마크 그룹 이름 선택</option>
             <c:forEach items="${bookmarkGroupList}" var="list">
-                <option value="${list.name}">${list.name}</option>
+                <option value="${list.id}">${list.name}</option>
             </c:forEach>
         </select>
         <button type="submit">북마크 추가하기</button>
@@ -60,7 +60,6 @@
             </tr>
             <tr>
                 <th>와이파이명</th>
-                <input type="hidden" name="wifiName" value=<c:out value="${wifi.mainNm}"/>>
                 <td><c:out value="${wifi.mainNm}"/></td>
             </tr>
             <tr>

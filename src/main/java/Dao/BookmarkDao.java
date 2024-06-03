@@ -45,18 +45,17 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public void saveBookmark(String groupName, String wifiName, String mgrNo) throws SQLException {
+    public void saveBookmark(int groupId, String mgrNo) throws SQLException {
 
-        String sql = "INSERT INTO bookmark_list (bookmark_name, wifi_name, date, mgr_no) " +
-                " VALUES(?, ?, DATETIME('now', '+9 hours'), ?);";
+        String sql = "INSERT INTO bookmark_list (group_id, mgr_no, date) " +
+                " VALUES(?, ?, DATETIME('now', '+9 hours'));";
 
         try {
             conn = createConnection();
             conn.setAutoCommit(false);
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, groupName);
-            stmt.setString(2, wifiName);
-            stmt.setString(3, mgrNo);
+            stmt.setInt(1, groupId);
+            stmt.setString(2, mgrNo);
 
             int affectedRows = stmt.executeUpdate();
             if(affectedRows > 0) {
@@ -203,8 +202,12 @@ public class BookmarkDao extends jdbcManager{
 
     public List<BookmarkVo> selectBookmarkOnedata(int id) throws Exception {
 
-        String sql = "SELECT * FROM bookmark_list " +
-                " WHERE id = ?";
+        String sql = "SELECT bl.id, bg.name as bookmark_name, wi.x_swifi_main_nm as wifi_name, bl.date, bl.mgr_no " +
+                "FROM bookmark_list bl " +
+                "JOIN bookmark_group bg ON bl.group_id = bg.id " +
+                "JOIN wifi_info wi ON bl.mgr_no = wi.x_swifi_mgr_no " +
+                "WHERE bl.id = ? " +
+                "ORDER BY bl.id;";
 
         try {
             conn = createConnection();
@@ -272,8 +275,11 @@ public class BookmarkDao extends jdbcManager{
 
     public List<BookmarkVo> selectBookmark() throws Exception {
 
-        String sql = "SELECT * FROM bookmark_list " +
-                " ORDER BY id;";
+        String sql = "SELECT bl.id, bg.name as bookmark_name, wi.x_swifi_main_nm as wifi_name, bl.date, bl.mgr_no " +
+                " FROM bookmark_list bl " +
+                " JOIN bookmark_group bg ON bl.group_id = bg.id " +
+                " JOIN wifi_info wi ON bl.mgr_no = wi.x_swifi_mgr_no " +
+                " ORDER BY bl.id;";
 
         try {
             conn = createConnection();

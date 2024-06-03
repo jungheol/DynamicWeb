@@ -7,11 +7,12 @@
     <list default="true" id="a9d554ff-d690-486f-97e9-d12917277c1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Vo/BookmarkVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vo/BookmarkVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SelectBookmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-delete.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +199,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/servlets/SelectBookmarkGroup.java</url>
           <line>26</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java</url>
+          <line>284</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/SelectBookmark.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

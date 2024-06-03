@@ -17,12 +17,11 @@ public class SaveBookmark extends HttpServlet {
     BookmarkDao bookmarkDao = new BookmarkDao();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String groupName = req.getParameter("bookmarkGroup");
-        String wifiName = req.getParameter("wifiName");
+        int bookmarkId = Integer.parseInt(req.getParameter("bookmarkId"));
         String mgrNo = req.getParameter("mgrNo");
 
         try {
-            bookmarkDao.saveBookmark(groupName, wifiName, mgrNo);
+            bookmarkDao.saveBookmark(bookmarkId, mgrNo);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
