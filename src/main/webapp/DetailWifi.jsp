@@ -51,6 +51,7 @@
             </tr>
             <tr>
                 <th>관리번호</th>
+                <input type="hidden" name="mgrNo" value=<c:out value="${wifi.mgrNo}"/>>
                 <td><c:out value="${wifi.mgrNo}"/></td>
             </tr>
             <tr>

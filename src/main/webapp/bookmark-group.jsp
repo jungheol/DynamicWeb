@@ -23,10 +23,10 @@
         color: white;
     }
     </style>
-    <title>북마크 그룹</title>
+    <title>북마크 그룹 관리</title>
 </head>
 <body>
-    <h1>북마크 그룹</h1>
+    <h1>북마크 그룹 관리</h1>
     <p>
         <a href="/">홈</a> |
         <a href="/history">와이파이 히스토리 목록</a> |

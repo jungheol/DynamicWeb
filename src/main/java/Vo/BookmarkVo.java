@@ -10,5 +10,6 @@ public class BookmarkVo {
     private String groupName;
     private String wifiName;
     private String date;
+    private String mgrNo;
 
 }

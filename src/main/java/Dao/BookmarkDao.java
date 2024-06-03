@@ -45,10 +45,10 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public void saveBookmark(String groupName, String wifiName) throws SQLException {
+    public void saveBookmark(String groupName, String wifiName, String mgrNo) throws SQLException {
 
-        String sql = "INSERT INTO bookmark_list (bookmark_name, wifi_name, date) " +
-                " VALUES(?, ?, DATETIME('now', '+9 hours'));";
+        String sql = "INSERT INTO bookmark_list (bookmark_name, wifi_name, date, mgr_no) " +
+                " VALUES(?, ?, DATETIME('now', '+9 hours'), ?);";
 
         try {
             conn = createConnection();
@@ -56,6 +56,7 @@ public class BookmarkDao extends jdbcManager{
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, groupName);
             stmt.setString(2, wifiName);
+            stmt.setString(3, mgrNo);
 
             int affectedRows = stmt.executeUpdate();
             if(affectedRows > 0) {
@@ -218,7 +219,8 @@ public class BookmarkDao extends jdbcManager{
                                 rs.getInt("id"),
                                 rs.getString("bookmark_name"),
                                 rs.getString("wifi_name"),
-                                rs.getString("date")
+                                rs.getString("date"),
+                                rs.getString("mgr_no")
                         )
                 );
             }
@@ -285,7 +287,8 @@ public class BookmarkDao extends jdbcManager{
                                 rs.getInt("id"),
                                 rs.getString("bookmark_name"),
                                 rs.getString("wifi_name"),
-                                rs.getString("date")
+                                rs.getString("date"),
+                                rs.getString("mgr_no")
                         )
                 );
             }

@@ -23,10 +23,10 @@
         color: white;
     }
     </style>
-    <title>북마크 리스트</title>
+    <title>북마크 보기</title>
 </head>
 <body>
-    <h1>북마크 리스트</h1>
+    <h1>북마크 보기</h1>
     <p>
         <a href="/">홈</a> |
         <a href="/history">와이파이 히스토리 목록</a> |
@@ -47,7 +47,9 @@
             <tr>
                 <td><c:out value="${list.id}"/></td>
                 <td><c:out value="${list.groupName}"/></td>
-                <td><c:out value="${list.wifiName}"/></td>
+                <td>
+                    <a href="/detail?mgrNo=${list.mgrNo}"><c:out value="${list.wifiName}"/></a>
+                </td>
                 <td><c:out value="${list.date}"/></td>
                 <td>
                 <a href="/bookmark-select?id=${list.id}"> 삭제 </a>

@@ -7,13 +7,11 @@
     <list default="true" id="a9d554ff-d690-486f-97e9-d12917277c1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/BookmarkDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vo/BookmarkVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vo/BookmarkVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DbCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteBookmarkGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/DeleteBookmarkGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SaveBookmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/wifi.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-delete.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-group-modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-group-modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bookmark-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bookmark-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DetailWifi.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
