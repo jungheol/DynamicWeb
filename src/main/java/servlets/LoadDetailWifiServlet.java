@@ -2,7 +2,7 @@ package servlets;
 
 import Dao.BookmarkDao;
 import Dao.WifiDao;
-import Vo.BookmarkVo;
+import Vo.BookmarkGroupVo;
 import Vo.WifiVo;
 
 import javax.servlet.RequestDispatcher;
@@ -23,9 +23,9 @@ public class LoadDetailWifiServlet extends HttpServlet {
         String mgrNo = req.getParameter("mgrNo");
 
         List<WifiVo> wifiDetail = wifiDao.detailWifi(mgrNo);
-        List<BookmarkVo> bookmarkList;
+        List<BookmarkGroupVo> bookmarkList;
         try {
-            bookmarkList = bookmarkDao.selectbookmarkAll();
+            bookmarkList = bookmarkDao.selectBookmarkGroupAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

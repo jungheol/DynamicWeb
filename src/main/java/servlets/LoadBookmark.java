@@ -1,7 +1,7 @@
 package servlets;
 
 import Dao.BookmarkDao;
-import Vo.BookmarkGroupVo;
+import Vo.BookmarkVo;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,34 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/bookmark-group-select")
-public class SelectBookmarkGroup extends HttpServlet {
+@WebServlet("/bookmark-list")
+public class LoadBookmark extends HttpServlet {
 
     BookmarkDao bookmarkDao = new BookmarkDao();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
-        List<BookmarkGroupVo> list;
+        List<BookmarkVo> list;
         try {
-            list = bookmarkDao.selectBookmarkGroupOnedata(id);
+            list = bookmarkDao.selectBookmark();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        req.setAttribute("id", list.get(0).getId());
-        req.setAttribute("name", list.get(0).getName());
-        req.setAttribute("order_idx", list.get(0).getOrder());
+        req.setAttribute("list", list);
 
-        String action = req.getParameter("action");
-        RequestDispatcher dispatcher;
-
-        if("modify".equals(action)) {
-            dispatcher = req.getRequestDispatcher("/bookmark-group-modify.jsp");
-        } else {
-            dispatcher = req.getRequestDispatcher("/bookmark-group-delete.jsp");
-        }
-
+        RequestDispatcher dispatcher = req.getRequestDispatcher("bookmark-list.jsp");  // 실제로 열릴 페이지 열어주기
         dispatcher.forward(req, res);
     }
 

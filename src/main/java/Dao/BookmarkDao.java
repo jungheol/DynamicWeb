@@ -1,5 +1,6 @@
 package Dao;
 
+import Vo.BookmarkGroupVo;
 import Vo.BookmarkVo;
 
 import java.sql.Connection;
@@ -135,7 +136,7 @@ public class BookmarkDao extends jdbcManager{
         }
     }
 
-    public List<BookmarkVo> selectBookmarkOnedata(int id) throws Exception {
+    public List<BookmarkGroupVo> selectBookmarkGroupOnedata(int id) throws Exception {
 
         String sql = "SELECT * FROM bookmark_group " +
                 " WHERE id = ?";
@@ -146,10 +147,10 @@ public class BookmarkDao extends jdbcManager{
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
 
-            List<BookmarkVo> list = new ArrayList<>();
+            List<BookmarkGroupVo> list = new ArrayList<>();
 
             while (rs.next()) {
-                list.add(new BookmarkVo(
+                list.add(new BookmarkGroupVo(
                                 rs.getInt("id"),
                                 rs.getString("name"),
                                 rs.getInt("order_idx"),
@@ -170,10 +171,44 @@ public class BookmarkDao extends jdbcManager{
         return null;
     }
 
-    public List<BookmarkVo> selectbookmarkAll() throws Exception {
+    public List<BookmarkGroupVo> selectBookmarkGroupAll() throws Exception {
 
         String sql = "SELECT * FROM bookmark_group " +
                 " ORDER BY order_idx;";
+
+        try {
+            conn = createConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            List<BookmarkGroupVo> list = new ArrayList<>();
+
+            while (rs.next()) {
+                list.add(new BookmarkGroupVo(
+                                rs.getInt("id"),
+                                rs.getString("name"),
+                                rs.getInt("order_idx"),
+                                rs.getString("addDate"),
+                                rs.getString("modifyDate")
+                        )
+                );
+            }
+            return list;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeResultSet(rs);
+            closeStatement(stmt);
+            closeConnection(conn);
+        }
+        return null;
+    }
+
+    public List<BookmarkVo> selectBookmark() throws Exception {
+
+        String sql = "SELECT * FROM bookmark_list " +
+                " ORDER BY id;";
 
         try {
             conn = createConnection();
@@ -185,10 +220,9 @@ public class BookmarkDao extends jdbcManager{
             while (rs.next()) {
                 list.add(new BookmarkVo(
                                 rs.getInt("id"),
-                                rs.getString("name"),
-                                rs.getInt("order_idx"),
-                                rs.getString("addDate"),
-                                rs.getString("modifyDate")
+                                rs.getString("bookmark_name"),
+                                rs.getString("wifi_name"),
+                                rs.getString("date")
                         )
                 );
             }

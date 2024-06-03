@@ -7,9 +7,8 @@ import lombok.*;
 public class BookmarkVo {
 
     private int id;
-    private String name;
-    private int order;
-    private String addDate;
-    private String modifyDate;
+    private String groupName;
+    private String wifiName;
+    private String date;
 
 }

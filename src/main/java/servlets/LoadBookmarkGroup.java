@@ -1,7 +1,7 @@
 package servlets;
 
 import Dao.BookmarkDao;
-import Vo.BookmarkVo;
+import Vo.BookmarkGroupVo;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/bookmark-group")
@@ -19,9 +18,9 @@ public class LoadBookmarkGroup extends HttpServlet {
     BookmarkDao bookmarkDao = new BookmarkDao();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        List<BookmarkVo> group = new ArrayList<>();
+        List<BookmarkGroupVo> group;
         try {
-            group = bookmarkDao.selectbookmarkAll();
+            group = bookmarkDao.selectBookmarkGroupAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
