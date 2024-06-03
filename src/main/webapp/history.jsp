@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
         .search-bar {
